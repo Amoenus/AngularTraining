@@ -6,7 +6,6 @@ Fast Track: The total duration of the content path choosing the must-have sectio
 
 ## 1. ANGULAR
 ### 1. [Angular Fundamentals (Video. Duration 9h 35m)](https://app.pluralsight.com/library/courses/angular-fundamentals/table-of-contents)
-https://app.pluralsight.com/library/courses/angular-fundamentals/table-of-contents
 This course will teach you the fundamentals of working with the latest version of Angular. You will learn everything you need to know to create complete applications including: components, services, directives, pipes, routing, HTTP, and even testing.
 
 ## 2. TESTING
