@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from '../common/toastr.service';
+import { EventService } from './shared/event.service';
 
 @Component({
   selector: 'events-list',
@@ -6,23 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./events-list.component.css']
 })
 export class EventsListComponent implements OnInit {
-  public event1 = {
-    id: 1,
-    name: 'Angular Connect',
-    date: '26/09/2036',
-    time: '11:00',
-    price: '599,99',
-    imageUrl: '/assets/images/angularconnect-shield.png',
-    location: {
-      address: '1057 DT',
-      city: 'London',
-      country: 'England'
-    }
-  };
+  events: any[];
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private eventService: EventService, private toastrService: ToastrService) {
   }
 
+  ngOnInit() {
+    this.events = this.eventService.getEvents();
+  }
+
+  handleThumbnailClick(name: string) {
+    this.toastrService.success(name);
+  }
 }

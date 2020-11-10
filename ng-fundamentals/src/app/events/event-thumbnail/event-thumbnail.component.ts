@@ -13,4 +13,17 @@ export class EventThumbnailComponent implements OnInit {
   ngOnInit() {
   }
 
+  public getTimeStyle(time?: string) {
+    switch (time) {
+       case '8:00 am': {
+          return ['early-start'];
+        }
+        case '10:00 am': {
+          return ['late-start'];
+        }
+       default: {
+        return [];
+       }
+    }
+  }
 }

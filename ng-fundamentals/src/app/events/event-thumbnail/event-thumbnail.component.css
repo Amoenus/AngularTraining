@@ -5,3 +5,17 @@
 .well div {
   color: #bbbbbb;
 }
+
+.thumbnail {
+  min-height: 210px;
+}
+
+.early-start {
+  color: chartreuse !important;
+  font-weight: bold;
+}
+
+.late-start {
+  color: crimson !important;
+  font-weight: bold;
+}
