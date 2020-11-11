@@ -1,4 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/user/auth.service';
 
 @Injectable()
 @Component({
@@ -8,9 +10,14 @@ import { Component, Injectable, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(public authService: AuthService, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  logout()  {
+    this.authService.logout();
+    this.router.navigate(['events']);
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { IEvent } from '../shared/models/event.model';
 import { EventService } from '../shared/event.service';
 
 @Injectable()
@@ -8,7 +9,7 @@ import { EventService } from '../shared/event.service';
   styleUrls: ['./event-details.component.css']
 })
 export class EventDetailsComponent implements OnInit {
-  event: any;
+  event: IEvent;
 
   constructor(private eventService: EventService, private route: ActivatedRoute) { }
 

@@ -1,5 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { IEvent } from './shared';
 
 @Injectable()
 @Component({
@@ -7,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./events-list.component.css']
 })
 export class EventsListComponent implements OnInit {
-  events: any;
+  events: IEvent[];
 
   constructor(private route: ActivatedRoute) {
   }
