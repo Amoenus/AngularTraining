@@ -11,12 +11,12 @@ export class CreateEventComponent implements OnInit {
 
   isDirty = true;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   ngOnInit() {
   }
 
-  public cancel() {
+  cancel() {
     this.router.navigate(['/events']);
   }
 
