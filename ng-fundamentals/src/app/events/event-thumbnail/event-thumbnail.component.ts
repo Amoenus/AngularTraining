@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Injectable, Input, OnInit } from '@angular/core';
 
+@Injectable()
 @Component({
   selector: 'app-event-thumbnail',
   templateUrl: './event-thumbnail.component.html',

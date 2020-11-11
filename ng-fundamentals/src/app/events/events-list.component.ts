@@ -1,23 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { ToastrService } from '../common/toastr.service';
-import { EventService } from './shared/event.service';
+import { Component, Injectable, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
+@Injectable()
 @Component({
-  selector: 'events-list',
   templateUrl: './events-list.component.html',
   styleUrls: ['./events-list.component.css']
 })
 export class EventsListComponent implements OnInit {
-  events: any[];
+  events: any;
 
-  constructor(private eventService: EventService, private toastrService: ToastrService) {
+  constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.events = this.eventService.getEvents();
-  }
-
-  handleThumbnailClick(name: string) {
-    this.toastrService.success(name);
+    this.events = this.route.snapshot.data['events'];
   }
 }
