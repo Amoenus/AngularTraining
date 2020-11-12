@@ -28,7 +28,7 @@
         <ul class="nav navbar-nav">
           <li>
             <a *ngIf="!authService.isAuthenicated()" [routerLink]="['user/login']">Login</a>
-            <a *ngIf="authService.isAuthenicated()" [routerLink]="['user/profile']">Welcome {{authService.currentUser.userName}}</a>
+            <a *ngIf="authService.isAuthenicated()" [routerLink]="['user/profile']">Welcome {{authService.currentUser.name}}</a>
             <a *ngIf="authService.isAuthenicated()" (click)="logout()">Logout</a>
           </li>
         </ul>

@@ -1,5 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { EventService, IEvent } from '../shared';
 
 @Injectable()
 @Component({
@@ -10,13 +11,20 @@ import { Router } from '@angular/router';
 export class CreateEventComponent implements OnInit {
 
   isDirty = true;
+  newEvent: any;
 
-  constructor(private router: Router) {}
+  constructor(private eventService: EventService, private router: Router) {}
 
   ngOnInit() {
   }
 
   cancel() {
+    this.router.navigate(['/events']);
+  }
+
+  saveEvent(formValues: IEvent) {
+    this.eventService.saveEvent(formValues);
+    this.isDirty = false;
     this.router.navigate(['/events']);
   }
 

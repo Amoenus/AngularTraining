@@ -322,5 +322,11 @@ export class EventService {
   public getEvent(id: Number): IEvent {
     return EVENTS.find(event => event.id === id);
   }
+
+  public saveEvent(event: IEvent) {
+    event.id = Math.max(...EVENTS.map(e => e.id)) + 1;
+    event.sessions = [];
+    return EVENTS.push(event);
+  }
 }
 
