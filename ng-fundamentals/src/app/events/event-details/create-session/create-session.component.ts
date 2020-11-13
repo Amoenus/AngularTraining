@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { ISession, restrictedWords } from '../../shared/index';
 
 @Component({
@@ -8,7 +7,11 @@ import { ISession, restrictedWords } from '../../shared/index';
   templateUrl: './create-session.component.html',
   styleUrls: ['./create-session.component.css']
 })
+
 export class CreateSessionComponent implements OnInit {
+  @Output() createNewSessionCancelled = new EventEmitter();
+  @Output() createNewSession = new EventEmitter();
+
   newSessionForm: FormGroup;
 
   name: FormControl;
@@ -17,7 +20,7 @@ export class CreateSessionComponent implements OnInit {
   level: FormControl;
   abstract: FormControl;
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
     this.name = new FormControl('', [Validators.required]);
@@ -46,11 +49,12 @@ export class CreateSessionComponent implements OnInit {
       abstract: sessionData.abstract,
       voters: []
     };
-    console.log(sessionModel);
+
+    this.createNewSession.emit(sessionModel);
   }
 
   cancel() {
-    this.router.navigate(['events']);
+    this.createNewSessionCancelled.emit();
   }
 
 }
