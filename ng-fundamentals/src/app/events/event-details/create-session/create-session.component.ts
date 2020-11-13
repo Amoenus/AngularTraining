@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ISession } from '../../shared/models/session.model';
+import { ISession, restrictedWords } from '../../shared/index';
 
 @Component({
   selector: 'app-create-session',
@@ -24,7 +24,7 @@ export class CreateSessionComponent implements OnInit {
     this.presenter = new FormControl('', [Validators.required]);
     this.duration = new FormControl('', [Validators.required]);
     this.level = new FormControl('', [Validators.required]);
-    this.abstract = new FormControl('', [Validators.required, Validators.maxLength(400)]);
+    this.abstract = new FormControl('', [Validators.required, Validators.maxLength(400), restrictedWords(['foo', 'bar'])]);
 
     this.newSessionForm = new FormGroup({
       name: this.name,
@@ -37,15 +37,15 @@ export class CreateSessionComponent implements OnInit {
 
   saveSession(sessionData: any) {
 
-  const sessionModel: ISession = {
-    id: undefined,
-    name: sessionData.name,
-    presenter: sessionData.presenter,
-    duration: Number(sessionData.duration),
-    level: sessionData.level,
-    abstract: sessionData.abstract,
-    voters: []
-  };
+    const sessionModel: ISession = {
+      id: undefined,
+      name: sessionData.name,
+      presenter: sessionData.presenter,
+      duration: Number(sessionData.duration),
+      level: sessionData.level,
+      abstract: sessionData.abstract,
+      voters: []
+    };
     console.log(sessionModel);
   }
 
