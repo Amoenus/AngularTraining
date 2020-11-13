@@ -38,4 +38,3 @@ jobs:
       run: |
         npm i
         npm run build:ci
-        npm test
