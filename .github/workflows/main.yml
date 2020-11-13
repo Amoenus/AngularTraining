@@ -35,7 +35,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
         
     - name: Ensure Angular CLI version
-      run: npm install -g @angular/cli@7.1.2 > /dev/null
+      run: | 
+        npm install -g @angular/cli@7.1.2 > /dev/null
+        ng version
       
     - name: npm i and npm run build
       run: |
