@@ -1,4 +1,5 @@
 # AngularTraining
+![Angular CI](https://github.com/Amoenus/AngularTraining/workflows/Angular%20CI/badge.svg?branch=main)
 ## Goal
 The exercise is built with the theory part in mind and with the intention to check the understanding of the learning material.
 
