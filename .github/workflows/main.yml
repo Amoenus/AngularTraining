@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [7.x]
+        node-version: [10.x]
 
     steps:
     - uses: actions/checkout@v2
@@ -33,11 +33,6 @@ jobs:
       uses: actions/setup-node@v2.1.2
       with:
         node-version: ${{ matrix.node-version }}
-        
-    - name: Ensure Angular CLI version
-      run: | 
-        npm install -g @angular/cli@7.1.2 > /dev/null
-        ng version
       
     - name: npm i and npm run build
       run: |
