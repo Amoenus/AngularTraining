@@ -26,13 +26,13 @@ export class ProfileComponent implements OnInit {
   }
 
   cancel(): void {
-    this.router.navigate(['events']);
+    this.router.navigate(['posts']);
   }
 
   saveProfile(profileFormData: any): void {
     if (this.profileForm?.valid) {
       this.authService.updateCurrentUser(profileFormData.firstName, profileFormData.lastName);
-      this.router.navigate(['events']);
+      this.router.navigate(['posts']);
     }
   }
 

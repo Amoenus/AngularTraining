@@ -19,11 +19,11 @@ export class LoginComponent implements OnInit {
 
   login(formValues: { userName: string; password: string; }): void {
     this.authService.loginUser(formValues.userName, formValues.password);
-    this.router.navigate(['events']);
+    this.router.navigate(['posts']);
   }
 
   cancel(): void {
-    this.router.navigate(['events']);
+    this.router.navigate(['posts']);
   }
 
 }
