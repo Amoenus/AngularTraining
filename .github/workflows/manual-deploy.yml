@@ -24,6 +24,8 @@ jobs:
       
     - run: ls
     - name: GitHub Pages
+      env: 
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # You may pin to the exact commit or the version.
       # uses: crazy-max/ghaction-github-pages@1510b11c0c2f843eafb8ff41b3da8c467c8d4a9f
       uses: crazy-max/ghaction-github-pages@v2.2.0
