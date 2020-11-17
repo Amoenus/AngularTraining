@@ -4,7 +4,7 @@ import { Component, Injectable, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-collapsable-well',
   templateUrl: './collapsable-well.component.html',
-  styleUrls: ['./collapsable-well.component.css']
+  styleUrls: ['./collapsable-well.component.scss']
 })
 
 export class CollapsableWellComponent implements OnInit {

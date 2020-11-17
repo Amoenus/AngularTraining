@@ -6,7 +6,7 @@ import { AuthService } from '../auth.service';
 @Injectable()
 @Component({
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
 
