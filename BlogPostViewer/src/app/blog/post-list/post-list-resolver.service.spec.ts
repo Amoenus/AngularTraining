@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
+import { PostListResolver } from './post-list-resolver.service';
 
-import { PostListResolverService } from './post-list-resolver.service';
 
 describe('PostListResolverService', () => {
-  let service: PostListResolverService;
+  let service: PostListResolver;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(PostListResolverService);
+    service = TestBed.inject(PostListResolver);
   });
 
   it('should be created', () => {

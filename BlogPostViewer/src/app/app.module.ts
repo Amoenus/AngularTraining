@@ -14,6 +14,7 @@ import { PostListComponent } from './blog/post-list/post-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostListResolver } from './blog/post-list/post-list-resolver.service';
 import { UserModule } from './user/user.module';
+import { PostThumbnailComponent } from './blog/post-thumbnail/post-thumbnail.component';
 
 @NgModule({
   imports: [
@@ -30,7 +31,8 @@ import { UserModule } from './user/user.module';
     AppComponent,
     NavbarComponent,
     Error404Component,
-    PostListComponent
+    PostListComponent,
+    PostThumbnailComponent
   ],
   providers: [
     ToastrService,

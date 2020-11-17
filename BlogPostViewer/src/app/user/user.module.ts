@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserRoutingModule } from './user-routing.module';
 import { StoreModule } from '@ngrx/store';
+import { MaterialModule } from '../shared/material/material.module';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { StoreModule } from '@ngrx/store';
     FormsModule,
     ReactiveFormsModule,
     UserRoutingModule,
-    StoreModule.forFeature('user', {})
+    StoreModule.forFeature('user', {}),
+    MaterialModule,
   ],
   declarations: [
     ProfileComponent,

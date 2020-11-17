@@ -1,4 +1,4 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/user/auth.service';
 
@@ -8,14 +8,11 @@ import { AuthService } from 'src/app/user/auth.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
 
   constructor(public authService: AuthService, private router: Router) { }
 
-  ngOnInit() {
-  }
-
-  logout()  {
+  logout(): void  {
     this.authService.logout();
     this.router.navigate(['posts']);
   }

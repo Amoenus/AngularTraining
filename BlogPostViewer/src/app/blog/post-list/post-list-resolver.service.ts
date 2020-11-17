@@ -3,7 +3,7 @@ import { Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { BlogService } from './blog.service';
-import { IPost as IPost } from './Post';
+import { IPost as IPost } from '../models/Post';
 
 @Injectable()
 export class PostListResolver implements Resolve<any> {

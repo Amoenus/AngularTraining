@@ -10,14 +10,16 @@ export class LoginComponent implements OnInit {
 
   userName!: string;
   password!: string;
-  mouseOverLogin!: boolean;
 
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  login(formValues: { userName: string; password: string; }): void {
+  login(formValues: {
+    userName: string;
+    password: string;
+  }): void {
     this.authService.loginUser(formValues.userName, formValues.password);
     this.router.navigate(['posts']);
   }

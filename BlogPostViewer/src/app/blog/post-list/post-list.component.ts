@@ -1,6 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IPost } from './Post';
+import { IPost } from '../models/Post';
 
 Injectable();
 @Component({
