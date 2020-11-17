@@ -31,3 +31,5 @@ jobs:
       uses: crazy-max/ghaction-github-pages@v2.2.0
       with:
         build_dir: artifacts/BlogPostViewer/dist/BlogPostViewer/
+        repo: amoenus/amoenus.github.io
+        
