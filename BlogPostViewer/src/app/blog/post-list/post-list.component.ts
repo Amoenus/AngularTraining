@@ -14,7 +14,7 @@ export class PostListComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.posts = this.route.snapshot.data.posts;
+    this.posts = this.route?.snapshot?.data.posts;
   }
 
 }

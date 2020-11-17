@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { BlogService } from './blog.service';
+import { BlogService } from '../services/blog.service';
 import { IPost as IPost } from '../models/Post';
 
 @Injectable()

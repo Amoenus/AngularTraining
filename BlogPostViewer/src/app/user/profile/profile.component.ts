@@ -3,7 +3,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
-@Injectable()
 @Component({
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']

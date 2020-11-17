@@ -4,7 +4,7 @@
       Posts</a>
   </mat-list-item>
   <mat-list-item>
-    <a mat-button routerLinkActive="mat-accent" [routerLink]="['/posts/new']">Create Event</a>
+    <a mat-button routerLinkActive="mat-accent" [routerLink]="['/posts/new']">Create Post</a>
   </mat-list-item>
   <mat-list-item *ngIf="!authService.isAuthenicated()">
     <a mat-button routerLinkActive="mat-accent" [routerLink]="['user/login']">Login</a>

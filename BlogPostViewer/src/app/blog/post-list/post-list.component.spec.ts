@@ -1,6 +1,12 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import { BehaviorSubject, of } from 'rxjs';
 
 import { PostListComponent } from './post-list.component';
+
+
+const activatedRouteStub = new BehaviorSubject({route: {snapshot: {}}});
 
 describe('PostListComponent', () => {
   let component: PostListComponent;
@@ -8,7 +14,13 @@ describe('PostListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PostListComponent ]
+      declarations: [ PostListComponent ],
+      providers: [
+        { provide: ActivatedRoute, useValue: activatedRouteStub }
+      ],
+      imports: [
+        RouterTestingModule
+      ]
     })
     .compileComponents();
   });
