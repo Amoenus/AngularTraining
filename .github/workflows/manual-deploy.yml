@@ -1,4 +1,4 @@
-name: Manual workflow
+name: Manually depoloy to Github Pages
 on:
   workflow_dispatch:
 
