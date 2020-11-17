@@ -13,6 +13,6 @@ export class BlogService {
 
   public getPosts(): Observable<IPost[]> {
 
-    return this.http.get<IPost[]>("http://jsonplaceholder.typicode.com/posts");
+    return this.http.get<IPost[]>('https://jsonplaceholder.typicode.com/posts');
   }
 }
