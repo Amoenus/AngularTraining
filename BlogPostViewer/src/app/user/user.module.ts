@@ -6,14 +6,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserRoutingModule } from './user-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { MaterialModule } from '../shared/material/material.module';
-
+import { userReducer } from './state/user.reducer';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     UserRoutingModule,
-    StoreModule.forFeature('user', {}),
+    StoreModule.forFeature('users', userReducer),
     MaterialModule,
   ],
   declarations: [

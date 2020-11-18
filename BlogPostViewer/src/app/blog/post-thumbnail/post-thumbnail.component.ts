@@ -1,5 +1,5 @@
 import { Component, Injectable, Input, OnInit } from '@angular/core';
-import { IPost } from '../models/Post';
+import { Post } from '../models/post.model';
 
 @Injectable()
 @Component({
@@ -8,7 +8,7 @@ import { IPost } from '../models/Post';
   styleUrls: ['./post-thumbnail.component.scss']
 })
 export class PostThumbnailComponent {
-  @Input() post!: IPost;
+  @Input() post!: Post;
 
   constructor() { }
 }

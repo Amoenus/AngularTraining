@@ -1,6 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IPost } from '../models/Post';
+import { Post } from '../models/post.model';
 
 Injectable();
 @Component({
@@ -9,7 +9,7 @@ Injectable();
 })
 export class PostListComponent implements OnInit {
 
-  posts: IPost[] = [];
+  posts: Post[] = [];
 
   constructor(private route: ActivatedRoute) { }
 

@@ -6,14 +6,14 @@
   <mat-list-item>
     <a mat-button routerLinkActive="mat-accent" [routerLink]="['/posts/new']">Create Post</a>
   </mat-list-item>
-  <mat-list-item *ngIf="!authService.isAuthenicated()">
+  <mat-list-item *ngIf="!authService.isLoggedIn()">
     <a mat-button routerLinkActive="mat-accent" [routerLink]="['user/login']">Login</a>
   </mat-list-item>
-  <mat-list-item *ngIf="authService.isAuthenicated()">
+  <mat-list-item *ngIf="authService.isLoggedIn()">
     <a mat-button [routerLink]="['user/profile']">Welcome
       {{authService.currentUser?.name}}</a>
   </mat-list-item>
-  <mat-list-item *ngIf="authService.isAuthenicated()">
+  <mat-list-item *ngIf="authService.isLoggedIn()">
     <a mat-button (click)="logout()">Logout</a>
   </mat-list-item>
 </mat-list>
