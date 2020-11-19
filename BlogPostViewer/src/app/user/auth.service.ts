@@ -29,7 +29,7 @@ export class AuthService {
     }
 
     updateCurrentUser(firstName: string, lastName: string) {
-      if (this.currentUser) {
+      if (!!this.currentUser) {
         this.currentUser.name = firstName;
         this.currentUser.surname = lastName;
       };

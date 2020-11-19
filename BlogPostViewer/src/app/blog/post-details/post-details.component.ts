@@ -1,6 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Post } from '../models/post.model';
 import { getPosts, State } from '../state';
 import { BlogPageActions } from '../state/actions';
@@ -12,7 +12,7 @@ Injectable();
 })
 export class PostDetailsComponent implements OnInit {
 
-  posts$: Observable<Post[]> | undefined;
+  posts$: Observable<Post[]> = of([]);
 
   constructor(private store: Store<State>) { }
 

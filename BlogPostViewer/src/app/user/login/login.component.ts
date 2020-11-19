@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 
 /* NgRx */
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   userName = '';
   password = '';
 
-  maskPassword$: Observable<boolean> | undefined;
+  maskPassword$: Observable<boolean> = of(true);
 
   constructor(private store: Store<State>, private authService: AuthService, private router: Router) { }
 
