@@ -1,4 +1,8 @@
-<div [routerLink]="['/posts', post.id]" class="well hoverwell thumbnail">
-  <h2 matLine>{{post?.title}}</h2>
-  <div matLine>Author Id: {{post?.userId}}</div>
+<div>
+  <a mat-icon-button [routerLink]="['/posts', post.id]">
+    <mat-icon>article</mat-icon>
+  </a>
+  <span>
+    {{post?.title}}
+  </span>
 </div>

@@ -7,10 +7,10 @@ import { BlogPageActions } from '../state/actions';
 
 Injectable();
 @Component({
-  templateUrl: './post-list.component.html',
-  styleUrls: ['./post-list.component.scss']
+  templateUrl: './post-details.component.html',
+  styleUrls: ['./post-details.component.scss']
 })
-export class PostListComponent implements OnInit {
+export class PostDetailsComponent implements OnInit {
 
   posts$: Observable<Post[]> | undefined;
 
@@ -20,10 +20,9 @@ export class PostListComponent implements OnInit {
 
     // Do NOT subscribe here because it uses an async pipe
     // This gets the initial values until the load is complete.
-    this.posts$ = this.store.select(getPosts);
 
-    this.store.dispatch(BlogPageActions.loadPosts());
+    // this.posts$ = this.store.select(getPosts);
 
+    // this.store.dispatch(BlogPageActions.loadPosts());
   }
-
 }
