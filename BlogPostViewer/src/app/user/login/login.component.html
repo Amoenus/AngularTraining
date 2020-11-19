@@ -12,8 +12,12 @@
     <div class="form-group">
       <mat-form-field appearance="fill">
         <mat-label>Enter your password</mat-label>
-        <input (ngModel)="password" placeholder="Password" name="password" required id="password" type="password"
-          matInput>
+        <input (ngModel)="password" placeholder="Password" name="password" required id="password"
+          [type]="(maskPassword$ | async) ? 'password' : 'text'" matInput>
+        <button mat-icon-button matSuffix (click)="checkChanged()" [attr.aria-label]="'Mask password'"
+          [attr.aria-pressed]="maskPassword$ | async">
+          <mat-icon>{{!(maskPassword$ | async) ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
         <mat-error *ngIf="loginForm.controls.password?.invalid">Required</mat-error>
       </mat-form-field>
     </div>

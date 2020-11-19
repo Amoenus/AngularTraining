@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 /* NgRx */
 import { Store } from '@ngrx/store';
 import { State } from '../../state/app.state';
-import { getMaskUserName } from '../state/user.reducer';
+import { getMaskPassword } from '../state/user.reducer';
 import { UserPageActions } from '../state/actions';
 import { AuthService } from '../auth.service';
 
@@ -22,16 +22,16 @@ export class LoginComponent implements OnInit {
   userName = '';
   password = '';
 
-  maskUserName$: Observable<boolean> | undefined;
+  maskPassword$: Observable<boolean> | undefined;
 
   constructor(private store: Store<State>, private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
-    this.maskUserName$ = this.store.select(getMaskUserName);
+    this.maskPassword$ = this.store.select(getMaskPassword);
   }
 
   checkChanged(): void {
-    this.store.dispatch(UserPageActions.maskUserName());
+    this.store.dispatch(UserPageActions.maskPassword());
   }
 
   login(formValues: {

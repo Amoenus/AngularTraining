@@ -5,21 +5,21 @@ import { UserPageActions } from './actions';
 
 // State for this feature (User)
 export interface UserState {
-  maskUserName: boolean;
+  maskPassword: boolean;
   currentUser?: User;
 }
 
 const initialState: UserState = {
-  maskUserName: true,
+  maskPassword: true,
   currentUser: undefined
 };
 
 // Selector functions
 const getUserFeatureState = createFeatureSelector<UserState>('users');
 
-export const getMaskUserName = createSelector(
+export const getMaskPassword = createSelector(
   getUserFeatureState,
-  state => state.maskUserName
+  state => state.maskPassword
 );
 
 export const getCurrentUser = createSelector(
@@ -29,8 +29,8 @@ export const getCurrentUser = createSelector(
 
 export const userReducer = createReducer<UserState>(
   initialState,
-  on(UserPageActions.maskUserName, (state): UserState => ({
+  on(UserPageActions.maskPassword, (state): UserState => ({
       ...state,
-      maskUserName: !state.maskUserName
+      maskPassword: !state.maskPassword
     }))
 );
