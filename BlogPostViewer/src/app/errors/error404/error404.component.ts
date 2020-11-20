@@ -1,15 +1,11 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 
 @Injectable()
 @Component({
   templateUrl: './error404.component.html',
   styleUrls: ['./error404.component.scss']
 })
-export class Error404Component implements OnInit {
+export class Error404Component {
 
   constructor() {}
-
-  ngOnInit() {
-  }
-
 }

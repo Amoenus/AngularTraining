@@ -1,5 +1,6 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import * as AppState from '../../state/app.state';
+import { Post } from '../models/post.model';
 import { BlogState } from './blog.reducer';
 
 // Extends the app state to include the post feature.
@@ -27,18 +28,19 @@ export const getCurrentPost = createSelector(
     getCurrentPostId,
     (state, currentPostId) => {
         if (currentPostId === 0) {
-            return {
-                id: 0,
-                postName: '',
-                postCode: 'New',
-                description: '',
-                starRating: 0
-            };
+            return emtpyPost;
         } else {
             return currentPostId ? state.posts.find(p => p.id === currentPostId) : null;
         }
     }
 );
+
+export const emtpyPost: Post = {
+  userId: 0,
+  id: 0,
+  title: '',
+  body: '',
+};
 
 export const getPosts = createSelector(
     getPostFeatureState,

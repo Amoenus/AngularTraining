@@ -7,6 +7,7 @@ import { UserRoutingModule } from './user-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { MaterialModule } from '../shared/material/material.module';
 import { userReducer } from './state/user.reducer';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -19,9 +20,7 @@ import { userReducer } from './state/user.reducer';
   declarations: [
     ProfileComponent,
     LoginComponent
-  ],
-  providers: [
-
   ]
 })
+
 export class UserModule { }

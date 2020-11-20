@@ -1,1 +1,19 @@
-<p>It works!</p>
+<mat-card>
+  <mat-card-header class="post-list-card">
+    <div mat-card-avatar class="post-list-header-image">
+      <img ngxGravatar [email]="(author | async)?.email || ''" fallback="identicon" />
+    </div>
+    <mat-card-title>{{(post | async)?.title}}</mat-card-title>
+    <mat-card-subtitle>By {{(author | async)?.name || ''}}</mat-card-subtitle>
+  </mat-card-header>
+  <img class="heroImage" mat-card-image [src]="getLinkPicture()" alt="{{(post | async)?.title}}">
+  <mat-card-content>
+    <p>
+      {{(post | async)?.body}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>

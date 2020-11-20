@@ -5,15 +5,13 @@ import { Post } from '../models/post.model';
 import { getPosts, State } from '../state';
 import { BlogPageActions } from '../state/actions';
 
-Injectable();
 @Component({
   templateUrl: './post-list.component.html',
   styleUrls: ['./post-list.component.scss']
 })
 export class PostListComponent implements OnInit {
 
-  posts$: Observable<Post[]> = of([]);
-
+  posts$?: Observable<Post[]> = of([]);
   constructor(private store: Store<State>) { }
 
   ngOnInit(): void {
@@ -23,7 +21,5 @@ export class PostListComponent implements OnInit {
     this.posts$ = this.store.select(getPosts);
 
     this.store.dispatch(BlogPageActions.loadPosts());
-
   }
-
 }

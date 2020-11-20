@@ -1,5 +1,5 @@
 <mat-toolbar>
-  <span>{{this.title?.getTitle()}}</span>
+  <span [routerLink]="['/posts']">{{this.title?.getTitle()}}</span>
 </mat-toolbar>
 <mat-sidenav-container>
   <mat-sidenav mode="side" opened>

@@ -15,7 +15,10 @@ import { PostThumbnailComponent } from './post-thumbnail/post-thumbnail.componen
 import { MaterialModule } from '../shared/material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { PostDetailsComponent } from './post-details/post-details.component';
-
+import { PostRouteActivator } from './services/post-route-activator.service';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { GravatarModule } from 'ngx-gravatar';
+import { AuthorService } from './services/author.service';
 const postRoutes: Routes = [
   { path: '', component: PostListComponent },
   { path: ':id', component: PostDetailsComponent },
@@ -31,8 +34,11 @@ const postRoutes: Routes = [
     HttpClientModule,
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FlexLayoutModule,
+    GravatarModule
   ],
+  providers: [PostRouteActivator, AuthorService],
   declarations: [
     PostListComponent,
     PostThumbnailComponent,

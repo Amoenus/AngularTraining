@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { PostRouteActivatorService } from './post-route-activator.service';
+import { PostRouteActivator } from './post-route-activator.service';
 
-describe('PostRouteActivatorService', () => {
-  let service: PostRouteActivatorService;
+describe('PostRouteActivator', () => {
+  let service: PostRouteActivator;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(PostRouteActivatorService);
+    service = TestBed.inject(PostRouteActivator);
   });
 
   it('should be created', () => {

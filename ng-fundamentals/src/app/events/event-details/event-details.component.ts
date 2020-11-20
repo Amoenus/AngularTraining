@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { IEvent } from '../shared/models/event.model';
 import { EventService } from '../shared/event.service';
 import { ISession } from '../shared/models/session.model';
-import { ThrowStmt } from '@angular/compiler';
 
 @Injectable()
 @Component({

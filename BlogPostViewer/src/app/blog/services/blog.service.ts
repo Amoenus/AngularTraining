@@ -26,6 +26,14 @@ export class BlogService {
       );
   }
 
+  getPost(id: number): Observable<Post> {
+    return this.http.get<Post>(`${this.rootUrl}/${id}`)
+      .pipe(
+        tap(data => console.log(JSON.stringify(data))),
+        catchError(this.handleError)
+      );
+  }
+
   createPost(post: Post): Observable<Post> {
     const headers = new HttpHeaders(this.jsonContentTypeHeader);
     // Post Id must be null for the Web API to assign an Id

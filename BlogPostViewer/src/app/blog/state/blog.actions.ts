@@ -1,21 +1,9 @@
 import { createAction, props } from '@ngrx/store';
 import { Post } from '../models/post.model';
 
-export const togglePostCode = createAction(
-  '[Post] Toggle Post Code'
-);
-
-export const setCurrentPost = createAction(
-  '[Post] Set Current Post',
-  props<{ currentPostId: number }>()
-);
-
-export const clearCurrentPost = createAction(
-  '[Post] Clear Current Post'
-);
-
-export const initializeCurrentPost = createAction(
-  '[Post] Initialize Current Post'
+export const loadPost = createAction(
+  '[Post] Load Single Post',
+  props<{ postId: number }>()
 );
 
 export const loadPosts = createAction(
