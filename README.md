@@ -1,4 +1,7 @@
 # AngularTraining
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/435b1528783040d99c325ef2fb7779eb)](https://app.codacy.com/gh/Amoenus/AngularTraining?utm_source=github.com&utm_medium=referral&utm_content=Amoenus/AngularTraining&utm_campaign=Badge_Grade)
+
 ![Angular CI](https://github.com/Amoenus/AngularTraining/workflows/Angular%20CI/badge.svg?branch=main)
 ## Goal
 The exercise is built with the theory part in mind and with the intention to check the understanding of the learning material.
