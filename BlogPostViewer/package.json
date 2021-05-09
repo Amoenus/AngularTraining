@@ -31,7 +31,7 @@
     "@ngrx/store-devtools": "^10.0.1",
     "jshint": "2.12.0",
     "ngx-gravatar": "^10.0.0",
-    "rxjs": "6.6.3",
+    "rxjs": "6.6.7",
     "tslib": "2.0.3",
     "zone.js": "0.10.3"
   },
