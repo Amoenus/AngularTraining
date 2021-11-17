@@ -16,8 +16,8 @@ export class ProfileComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
-    this.firstName = new FormControl(this.authService.currentUser?.name, [Validators.required, Validators.pattern('[a-zA-Z].*')]);
-    this.lastName = new FormControl(this.authService.currentUser?.surname, [Validators.required, Validators.pattern('[a-zA-Z].*')]);
+    this.firstName = new FormControl(this.authService.currentUser?.name, [Validators.required, Validators['pattern']('[a-zA-Z].*')]);
+    this.lastName = new FormControl(this.authService.currentUser?.surname, [Validators.required, Validators['pattern']('[a-zA-Z].*')]);
     this.profileForm = new FormGroup({
       firstName: this.firstName,
       lastName: this.lastName
