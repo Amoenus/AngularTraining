@@ -10,6 +10,7 @@ import { State } from '../../state/app.state';
 import { getMaskPassword } from '../state/user.reducer';
 import { UserPageActions } from '../state/actions';
 import { AuthService } from '../auth.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   templateUrl: './login.component.html',
@@ -55,4 +56,11 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['posts']);
   }
 
+  isRequired(loginForm: NgForm, controlName: string): boolean {
+    return loginForm.controls[controlName]?.errors?.['required'];
+  }
+
+  isInvalidPassword(loginForm: NgForm, controlName: string): boolean {
+    return loginForm.controls[controlName]?.errors?.['invalid'];
+  }
 }

@@ -31,4 +31,4 @@ export class AuthorService {
         catchError(handleError)
       );
   }
-
+}
