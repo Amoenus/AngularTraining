@@ -13,7 +13,7 @@ export class PostRouteActivator implements CanActivate {
   }
 
   canActivate(route: ActivatedRouteSnapshot) {
-    const postId = Number(route.params.id);
+    const postId = Number(route.params['id']);
     const eventExists = !!this.blogService.getPost(postId);
 
     if (!eventExists) {

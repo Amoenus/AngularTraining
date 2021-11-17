@@ -6,15 +6,15 @@
       <div class="form-group"
         [ngClass]="{'error': !isValidFirstName()}">
         <label for="firstName">First Name:</label>
-        <em *ngIf="!isValidFirstName() && profileForm.controls.firstName?.errors?.required">Required</em>
-        <em *ngIf="!isValidFirstName() && profileForm.controls.firstName?.errors?.pattern">Must start with a letter</em>
+        <em *ngIf="!isValidFirstName() && isRequired(profileForm, 'firstName')">Required</em>
+        <em *ngIf="!isValidFirstName() && didNotStartingWithLetter(profileForm, 'firstName')">Must start with a letter</em>
         <input formControlName="firstName" id="firstName" type="text" class="form-control"
           placeholder="First Name..." />
       </div>
       <div class="form-group"
           [ngClass]="{'error': !isValidLastName()}">
-          <em *ngIf="!isValidLastName() && profileForm.controls.lastName?.errors?.required">Required</em>
-          <em *ngIf="!isValidLastName() && profileForm.controls.lastName?.errors?.pattern">Must start with a letter</em>
+          <em *ngIf="!isValidLastName() && isRequired(profileForm, 'lastName')">Required</em>
+          <em *ngIf="!isValidLastName() && didNotStartingWithLetter(profileForm, 'lastName')">Must start with a letter</em>
           <label for="lastName">Last Name:</label>
         <input formControlName="lastName" id="lastName" type="text" class="form-control" placeholder="Last Name..." />
       </div>

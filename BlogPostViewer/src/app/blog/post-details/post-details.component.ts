@@ -24,7 +24,7 @@ export class PostDetailsComponent implements OnInit {
 
     // Do NOT subscribe here because it uses an async pipe
     // This gets the initial values until the load is complete.
-    this.post = this.blogService.getPost(Number(this.route.snapshot.params.id)).pipe();
+    this.post = this.blogService.getPost(Number(this.route.snapshot.params['id'])).pipe();
     this.post.subscribe(post => {
       this.cachedPost = post;
       this.author = this.authorService.getAuthor(post?.userId);
