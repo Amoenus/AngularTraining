@@ -20,14 +20,6 @@ jobs:
         branch: main
         name: dist-without-markdown
         path: artifacts
-      
-    - name: Import GPG key
-      uses: crazy-max/ghaction-import-gpg@v3
-      with:
-        gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
-        passphrase: ${{ secrets.PASSPHRASE }}
-        git-user-signingkey: true
-        git-commit-gpgsign: true
 
     - name: Deploy to GitHub Pages
       if: success()
