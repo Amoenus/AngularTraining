@@ -29,7 +29,7 @@
     "@ngrx/effects": "13.0.1",
     "@ngrx/store": "13.0.1",
     "@ngrx/store-devtools": "13.0.1",
-    "jshint": "2.13.1",
+    "jshint": "2.13.4",
     "ngx-gravatar": "11.0.0",
     "rxjs": "7.4.0",
     "tslib": "2.3.1",
